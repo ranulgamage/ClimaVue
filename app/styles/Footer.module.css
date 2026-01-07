@@ -1,0 +1,96 @@
+/* Footer Component Styles */
+
+.footer {
+  background: var(--footer-bg);
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.branding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.developer {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.highlight {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.company {
+  display: flex;
+  align-items: center;
+}
+
+.companyLogo {
+  height: auto;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.companyLogo:hover {
+  opacity: 1;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.attribution {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.attribution a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.attribution a:hover {
+  color: var(--primary-color-dark);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .developer {
+    font-size: 0.9rem;
+  }
+
+  .companyLogo {
+    width: 80px;
+  }
+
+  .copyright,
+  .attribution {
+    font-size: 0.8rem;
+  }
+}

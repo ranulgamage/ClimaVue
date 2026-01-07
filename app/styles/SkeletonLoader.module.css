@@ -1,0 +1,108 @@
+/* SkeletonLoader Component Styles */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.currentWeather,
+.hourlyForecast,
+.dailyForecast {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+.skeletonHeader {
+  margin-bottom: 1.5rem;
+}
+
+.skeletonMain {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.skeletonTemp {
+  flex: 1;
+}
+
+.skeletonDetails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.skeletonDetail {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--detail-bg);
+  border-radius: 12px;
+}
+
+.skeletonHourly {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.skeletonHour {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  min-width: 100px;
+  background: var(--detail-bg);
+  border-radius: 12px;
+}
+
+.skeletonDay {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--detail-bg);
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+}
+
+.skeletonLine,
+.skeletonCircle {
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-base) 0%,
+    var(--skeleton-highlight) 50%,
+    var(--skeleton-base) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+.skeletonCircle {
+  border-radius: 50%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .skeletonMain {
+    flex-direction: column;
+  }
+
+  .skeletonDetails {
+    grid-template-columns: 1fr;
+  }
+}
