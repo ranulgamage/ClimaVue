@@ -40,13 +40,23 @@
   align-items: center;
 }
 
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.logoLink:hover {
+  transform: scale(1.05);
+}
+
 .companyLogo {
   height: auto;
   opacity: 0.9;
   transition: opacity 0.2s ease;
 }
 
-.companyLogo:hover {
+.logoLink:hover .companyLogo {
   opacity: 1;
 }
 

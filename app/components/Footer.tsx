@@ -20,13 +20,15 @@ export default function Footer() {
             Developed by <span className={styles.highlight}>Ranul Gamage</span>
           </div>
           <div className={styles.company}>
-            <Image
-              src="/logo-rgdev.png"
-              alt="RGDev"
-              width={100}
-              height={30}
-              className={styles.companyLogo}
-            />
+            <a href="https://ranulgamage.tech/" target="_blank" rel="noopener noreferrer" className={styles.logoLink}>
+              <Image
+                src="/logo-rgdev.png"
+                alt="RGDev"
+                width={100}
+                height={30}
+                className={styles.companyLogo}
+              />
+            </a>
           </div>
         </div>
         <div className={styles.copyright}>
