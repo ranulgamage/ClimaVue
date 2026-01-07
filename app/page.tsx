@@ -16,6 +16,7 @@ import LoadingScreen from './components/LoadingScreen';
 import ErrorMessage from './components/ErrorMessage';
 import SkeletonLoader from './components/SkeletonLoader';
 import Footer from './components/Footer';
+import BackgroundVideo from './components/BackgroundVideo';
 import { useDarkMode } from './hooks/useDarkMode';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { useGeolocation } from './hooks/useGeolocation';
@@ -30,6 +31,7 @@ export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [initialLoad, setInitialLoad] = useState<boolean>(true);
+  const [weatherBackground, setWeatherBackground] = useState<string>('default');
   const { getCurrentLocation, loading: geoLoading } = useGeolocation();
 
   // Default city
@@ -159,6 +161,9 @@ export default function Home() {
       );
       const bgClass = getWeatherBackground(weatherData.current.condition, isNight);
       
+      // Update video background
+      setWeatherBackground(bgClass);
+      
       // Remove all weather classes
       document.body.classList.remove('sunny', 'cloudy', 'rainy', 'snowy', 'stormy', 'foggy', 'night', 'default');
       
@@ -174,6 +179,8 @@ export default function Home() {
 
   return (
     <>
+      <BackgroundVideo weatherCondition={weatherBackground} />
+      
       <Header
         isDark={isDark}
         toggleDarkMode={toggleDarkMode}
